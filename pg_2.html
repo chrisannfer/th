@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Webpage Title</title>
+
+    <style>
+        body {
+            background-image: url('th.1.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        #additionalText {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Your Centered Heading Text</h1>
+
+    <p>Your paragraph text goes here.</p>
+
+    <!-- Form for answer submission -->
+    <form id="answerForm">
+        <label for="answer">Answer:</label>
+        <input type="text" id="answer" required>
+        <button type="button" onclick="checkAnswer()">Submit</button>
+    </form>
+
+    <p id="additionalText">Additional text below the text box.</p>
+
+    <script>
+        function checkAnswer() {
+            // Get the value from the input box
+            var enteredAnswer = document.getElementById("answer").value.toLowerCase(); // Convert to lowercase for case-insensitivity
+
+            // Check if the enteredAnswer is correct
+            if (enteredAnswer === "chrisann") {  // Replace "your-certain-answer" with the actual correct answer
+                // Create an anchor element to trigger the download
+                var downloadLink = document.createElement("a");
+                downloadLink.href = "img3.jpg";  // Replace with the actual path to your image
+                downloadLink.download = "th.jpg";  // Specify the downloaded file name
+                downloadLink.click();
+            } else {
+                alert("Incorrect answer. Please try again.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
